@@ -3,7 +3,7 @@ const path = require('path');
 const inspector = require('inspector');
 
 const app = express();
-app.use(express.static('dist'));
+app.use(express.static('clients'));
 app.use(function(req, res, next) {
   const reqOrigin = req.header('Origin') || '*';
   res.header('Access-Control-Allow-Origin', reqOrigin);

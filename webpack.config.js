@@ -1,11 +1,11 @@
 module.exports = {
   mode: 'development',
   entry: {
-    websocket: './client/websocket.js',
-    http: './client/http.js',
+    websocket: './src/client/websocket.js',
+    http: './src/client/http.js',
   },
   output: {
-    path: __dirname + '/dist',
+    path: __dirname + '/clients',
     filename: '[name]-client.js',
   },
   module: {
