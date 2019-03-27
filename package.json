@@ -1,0 +1,35 @@
+{
+  "name": "chrome-remote-debug-proxy",
+  "version": "0.1.0",
+  "engines": {
+    "node": ">=10.0.0"
+  },
+  "description": "devtoolsがないTV用のブラウザーなどのjavascriptデバッガー",
+  "main": "index.js",
+  "author": "murayama",
+  "license": "MIT",
+  "bin": {
+    "crdp": "yarn start"
+  },
+  "private": false,
+  "scripts": {
+    "clean": "rimraf dist",
+    "start": "node --inspect index.js",
+    "build": "yarn clean && webpack"
+  },
+  "dependencies": {
+    "axios": "0.18.0",
+    "express": "4.16.4",
+    "query-string": "6.4.2",
+    "socket.io": "2.2.0"
+  },
+  "devDependencies": {
+    "@babel/core": "7.4.0",
+    "@babel/preset-env": "7.4.2",
+    "babel-loader": "8.0.5",
+    "rimraf": "2.6.3",
+    "socket.io-client": "2.2.0",
+    "webpack": "4.29.6",
+    "webpack-cli": "3.3.0"
+  }
+}
