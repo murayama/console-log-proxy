@@ -4,13 +4,29 @@
   "engines": {
     "node": ">=10.0.0"
   },
-  "description": "devtoolsがないTV用のブラウザーなどのjavascriptデバッガー",
+  "description": "chrome remote debug proxy server",
+  "keywords": [
+    "chrome",
+    "remote",
+    "debug",
+    "debugger",
+    "proxy"
+  ],
   "main": "index.js",
   "author": "murayama",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:murayama/chrome-remote-debug-proxy.git"
+  },
   "bin": {
     "crdp": "yarn start"
   },
+  "files": [
+    "index.js",
+    "index.html",
+    "clients"
+  ],
   "private": false,
   "scripts": {
     "clean": "rimraf clients",
