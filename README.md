@@ -21,13 +21,13 @@ GoogleChromeが推奨だがVisualStudioCodeなどのChromeDevToolsProtocolをサ
 ## install
 
 ```
-yarn install chrome-remote-debug-proxy
+yarn add chrome-remote-debug-proxy
 ```
 
 ## server
 
 ```
-yarn crdp
+yarn chrome-remote-debug-proxy
 ```
 default port 8888
 
