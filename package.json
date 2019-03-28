@@ -20,7 +20,7 @@
     "url": "git@github.com:murayama/chrome-remote-debug-proxy.git"
   },
   "bin": {
-    "crdp": "yarn start"
+    "chrome-remote-debug-proxy": "index.js"
   },
   "files": [
     "index.js",
