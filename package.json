@@ -1,12 +1,11 @@
 {
-  "name": "chrome-remote-debug-proxy",
-  "version": "0.1.2",
+  "name": "console-log-proxy",
+  "version": "0.1.0",
   "engines": {
     "node": ">=10.0.0"
   },
-  "description": "chrome remote debug proxy server",
+  "description": "javascript console debug proxy server",
   "keywords": [
-    "chrome",
     "remote",
     "debug",
     "debugger",
@@ -17,10 +16,10 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git@github.com:murayama/chrome-remote-debug-proxy.git"
+    "url": "git@github.com:murayama/console-log-proxy.git"
   },
   "bin": {
-    "chrome-remote-debug-proxy": "index.js"
+    "console-log-proxy": "index.js"
   },
   "files": [
     "index.js",

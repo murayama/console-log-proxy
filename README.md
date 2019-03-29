@@ -1,54 +1,58 @@
-# ChromeRemoteDebugProxy
+# Console Log Proxy
 
-require node v10.x
+[![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE)
 
-TVのブラウザなど、devtoolsがなく開発が困難な場合を想定している
-consoleの出力のみとしDOMのデバッグは対応しない
-
-Chromeで[NIM](https://chrome.google.com/webstore/detail/nodejs-v8-inspector-manag/gnhhdgbaldcilmgcpfddgdbkhjohddkj")をいれておくとサーバーを立ち上げたときに自動でコンソールが立ち上がるようにできるので便利
-
-NIMを使わない場合は、
-
-1. Chromeで`chrome://inspect`と入力
-2. `Open Dedicated DevTools for Node`をクリック
-3. 立ち上がった画面の`Add Connection`を押して`localhost:9229`を登録
-4. Remote Target#localhostのところに`inspect`が表示されるのでクリックするとinspectorが立ち上がる
-
-GoogleChromeが推奨だがVisualStudioCodeなどのChromeDevToolsProtocolをサポートしているものであれば使えるはず
+- require node v10.x
+- It is assumed that there is no devtools, such as a TV browser, and development is difficult.
+- Only console output and DOM debugging is not supported
+- Using the nodejs standard inspector
 
 # Usage
 
 ## install
 
 ```
-yarn add chrome-remote-debug-proxy
+yarn global add console-log-proxy
 ```
 
-## server
+## proxy server
 
 ```
-yarn chrome-remote-debug-proxy
+console-log-proxy
 ```
-default port 8888
+default port is 8888
 
-## client
+if you specify a port
 
-クライアントはwebsocketとhttpが用意されている
-対象のサイトでクライアントJSを読み込む
+```
+PORT=1234 console-log-proxy
+```
+
+## proxy client
+
+There is a websocket client and an http client
+Please load the client js at the target website<Paste>
+
+websocket client
 
 ```html
 <script src="http://localhost:8888/websocket-client.js"></script>
 ```
 
-or
+http client
 
-```
 ```html
 <script src="http://localhost:8888/http-client.js"></script>
 ```
 
-接続先のサーバーはデフォルトでlocalhost:8888になっているので指定する場合は、queryでhostとportを指定する
+if youe specify proxy server host and port
 
 ```html
 <script src="http://localhost:1234/websocket-client.js?host=192.168.134.80&port=1234"></script>
 ```
+
+## inspector client
+
+inspector client is [here](https://nodejs.org/en/docs/guides/debugging-getting-started/#inspector-clients)
+
+It is convenient to use [NIM](https://chrome.google.com/webstore/detail/nodejs-v8-inspector-manag/gnhhdgbaldcilmgcpfddgdbkhjohddkj") when using Chrome
