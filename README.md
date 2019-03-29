@@ -1,5 +1,6 @@
 # Console Log Proxy
 
+[![npm version](https://badge.fury.io/js/console-log-proxy.svg)](https://badge.fury.io/js/console-log-proxy)
 [![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE)
 
 - require node v10.x
