@@ -8,31 +8,32 @@
 - Only console output and DOM debugging is not supported
 - Using the nodejs standard inspector
 
+
 # Usage
 
 ## install
 
 ```
-yarn global add console-log-proxy
+$ yarn global add console-log-proxy
 ```
 
 ## proxy server
 
 ```
-console-log-proxy
+$ console-log-proxy
 ```
 default port is 8888
 
 if you specify a port
 
 ```
-PORT=1234 console-log-proxy
+$ PORT=1234 console-log-proxy
 ```
 
 ## proxy client
 
 There is a websocket client and an http client
-Please load the client js at the target website<Paste>
+Adding this script tag to your app
 
 websocket client
 
@@ -49,8 +50,17 @@ http client
 if youe specify proxy server host and port
 
 ```html
-<script src="http://localhost:1234/websocket-client.js?host=192.168.134.80&port=1234"></script>
+<script src="http://xxx.xxx.xxx.xxx:1234/websocket-client.js?host=xxx.xxx.xxx.xxx&port=1234"></script>
 ```
+### Supported console method
+
+- debug
+- error
+- info
+- log
+- warn
+- dir
+- table
 
 ## inspector client
 

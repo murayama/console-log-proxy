@@ -14,5 +14,7 @@ try {
     });
   });
 } catch (err) {
-  console.error(err);
+  if (window.orgConsole && typeof window.orgConsole.error == 'function') {
+    window.orgConsole.error.call(console, err);
+  }
 }

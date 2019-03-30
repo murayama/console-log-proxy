@@ -11,11 +11,12 @@ try {
     baseURL: `${method}://${host}:${[port]}`,
     withCredentials: true,
   });
-  const consoleMethods = ['debug', 'error', 'info', 'log', 'warn', 'dir', 'table'];
   overwriteConsole(data => {
     // TODO: batch request
     http.get(`/console?event=${JSON.stringify(data)}`).then(res => {});
   });
 } catch (err) {
-  console.error(err);
+  if (window.orgConsole && typeof window.orgConsole.error == 'function') {
+    window.orgConsole.error.call(console, err);
+  }
 }
