@@ -3,10 +3,10 @@ import axios from 'axios';
 import overwriteConsole from './overwrite-console';
 
 try {
-  const query = queryString.parse(location.search);
-  const host = query.host || 'localhost';
-  const port = query.port || 8888;
-  const method = query.method || 'http';
+  const config = window.console_log_proxy_config || {};
+  const host = config.host || 'localhost';
+  const port = config.port || 8888;
+  const method = config.method || 'http';
   const http = axios.create({
     baseURL: `${method}://${host}:${[port]}`,
     withCredentials: true,

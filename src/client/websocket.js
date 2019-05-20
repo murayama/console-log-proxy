@@ -3,9 +3,9 @@ import io from 'socket.io-client';
 import overwriteConsole from './overwrite-console';
 
 try {
-  const query = queryString.parse(location.search);
-  const host = query.host || 'localhost';
-  const port = query.port || 8888;
+  const config = window.console_log_proxy_config || {};
+  const host = config.host || 'localhost';
+  const port = config.port || 8888;
   const socket = io(`${host}:${port}`);
 
   socket.on('connect', () => {

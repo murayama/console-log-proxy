@@ -50,7 +50,13 @@ http client
 if youe specify proxy server host and port
 
 ```html
-<script src="http://xxx.xxx.xxx.xxx:1234/websocket-client.js?host=xxx.xxx.xxx.xxx&port=1234"></script>
+<script>
+  var console_log_proxy_config = {
+    host: 'xxx.xxx.xxx.xxx',
+    port: 1234
+  };
+</script>
+<script src="http://xxx.xxx.xxx.xxx:1234/websocket-client.js></script>
 ```
 ### Supported console method
 
