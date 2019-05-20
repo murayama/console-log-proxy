@@ -1,4 +1,3 @@
-import queryString from 'query-string';
 import io from 'socket.io-client';
 import overwriteConsole from './overwrite-console';
 
