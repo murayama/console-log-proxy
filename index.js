@@ -1,11 +1,18 @@
 #!/usr/bin/env node --inspect
 
 const express = require('express');
+const bodyParser = require('body-parser');
 const path = require('path');
 const inspector = require('inspector');
 
 const app = express();
 app.use(express.static('clients'));
+app.use(
+  bodyParser.urlencoded({
+    extended: true,
+  })
+);
+app.use(bodyParser.json());
 app.use(function(req, res, next) {
   const reqOrigin = req.header('Origin') || '*';
   res.header('Access-Control-Allow-Origin', reqOrigin);
@@ -21,10 +28,9 @@ app.get('/', (req, res) => {
 });
 
 // http client
-app.get('/console', (req, res) => {
+app.post('/console', (req, res) => {
   try {
-    const event = JSON.parse(req.query.event);
-    const {method, data} = event;
+    const {method, data} = req.body;
     inspector.console[method](...data);
   } catch (err) {
     console.log(err);

@@ -12,7 +12,7 @@ try {
   });
   overwriteConsole(data => {
     // TODO: batch request
-    http.get(`/console?event=${JSON.stringify(data)}`).then(res => {});
+    http.post('/console', data).then(res => {});
   });
 } catch (err) {
   if (window.orgConsole && typeof window.orgConsole.error == 'function') {
